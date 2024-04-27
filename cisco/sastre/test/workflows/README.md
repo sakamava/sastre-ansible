@@ -21,7 +21,7 @@ Robot Framework 7.0 (Python 3.9.9 on darwin)
 
 ## NOTES
 
-Please ensure that "test-data" branch has correct data . This data folder will be used throughout the workflows.
+Please ensure that "test-data" branch has correct data w.r.t SD-WAN version. This data folder will be used throughout the workflows.
 
 ## Running the workflows 
 
