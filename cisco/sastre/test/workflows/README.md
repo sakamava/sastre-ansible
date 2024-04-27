@@ -49,9 +49,9 @@ Workflow_03: Detach_Vsmart_Attach_Vsmart :: Executing show_templat... | PASS |
 Sastre Ansible Workflows                                              | PASS |
 3 tests, 3 passed, 0 failed
 ==============================================================================
-Output:  ${Sastre Ansible Home}/cisco/sastre/test/workflows/output.xml
-Log:     ${Sastre Ansible Home}/cisco/sastre/test/workflows/log.html
-Report:  ${Sastre Ansible Home}/cisco/sastre/test/workflows/report.html
+Output:  < Sastre Ansible Home >/cisco/sastre/test/workflows/output.xml
+Log:     < Sastre Ansible Home >/cisco/sastre/test/workflows/log.html
+Report:  < Sastre Ansible Home >/cisco/sastre/test/workflows/report.html
 ```
 * Check **report.html** for test report statistics
 * Check **log.html** for test logs
