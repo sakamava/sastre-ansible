@@ -3,12 +3,7 @@ Sastre-Ansible 1.0.20 [April xx, 2024]
 
 - Updated Sastre Ansisble workflows to work with Robot Framework
 
-Sastre-Ansible 1.0.19 [March 7, 2024]
-=========================================
-
-- Documentation update
-
-Sastre-Ansible 1.0.18 [February 17, 2024]
+Sastre-Ansible 1.0.19 [March 8, 2024]
 =========================================
 
 ### Improvements
