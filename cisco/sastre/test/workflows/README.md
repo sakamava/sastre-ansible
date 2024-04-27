@@ -1,6 +1,6 @@
-# Cisco SASTRE workflows automation
+# Cisco SASTRE ANSIBLE workflow automation
 
-Cisco SASTRE Test Workflows will automate and test some of the Sastre-Ansible module tasks end to end. 
+Cisco Sastre Ansible Test Workflows will automate and test some of the Sastre-Ansible module tasks end to end. 
 
 These workflows will leverage Robot Framework for building and running workflows
 
@@ -23,7 +23,7 @@ Robot Framework 7.0 (Python 3.9.9 on darwin)
 
 Please ensure that "test-data" branch has correct data w.r.t SD-WAN version. This data folder will be used throughout the workflows.
 
-## Running the workflows 
+## Running the Sastre Ansbile Workflows 
 
 * update and source **env.sh**
 ```
@@ -31,12 +31,12 @@ source env.sh
 ```
 
 * Run sastre workflows
-    * sh sastre_workflows.robot  
+    * sh sastre_ansible_workflow.sh  
 
 * Sample output
 ```
 ==============================================================================
-Sastre Workflows                                                              
+Sastre Ansible Workflows                                                              
 ==============================================================================
 Workflow_01: Backup_Delete_Restore :: Executing list_config, show_... | PASS |
 ------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ Workflow_02: Detach_Edge_Attach_Edge :: Executing show_template_va... | PASS |
 ------------------------------------------------------------------------------
 Workflow_03: Detach_Vsmart_Attach_Vsmart :: Executing show_templat... | PASS |
 ------------------------------------------------------------------------------
-Sastre Workflows                                                      | PASS |
+Sastre Ansible Workflows                                              | PASS |
 3 tests, 3 passed, 0 failed
 ==============================================================================
 Output:  ${Sastre Ansible Home}/cisco/sastre/test/workflows/output.xml
