@@ -27,11 +27,13 @@ Please ensure that "test-data" branch has correct data w.r.t SD-WAN version. Thi
 
 * update and source **env.sh**
 ```
-source env.sh
+% source env.sh
 ```
 
 * Run sastre ansible workflows
-    * sh sastre_ansible_workflow.sh  
+```
+% sh sastre_ansible_workflow.sh  
+```
 
 * Sample output
 ```
