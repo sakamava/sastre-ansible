@@ -1,7 +1,4 @@
 *** Settings ***
-Library     CXTA
-Resource    cxta.robot
-
 Library     OperatingSystem
 Library     Collections
 Library     lib/sastre_ansible.py

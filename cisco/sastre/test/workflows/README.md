@@ -2,50 +2,54 @@
 
 Cisco SASTRE Test Workflows will automate and test some of the Sastre-Ansible module tasks end to end. 
 
-These workflows will leverage [CXTA framework](https://wwwin-github.cisco.com/AS-Community/CXTA) for building and running workflows
+These workflows will leverage Robot Framework for building and running workflows
 
+## Pre-requisite
 
-## CXTA version compatibility
+Install Robot Framwork : https://pypi.org/project/robotframework/
 
-These workflows are tested against following CXTA versions: **==21.9**.
+```
+pip install robotframework
+```
 
+Run version command to check robot framework is installed successfully
 
-## Running the workflows in Docker
+```
+% robot --version
+Robot Framework 7.0 (Python 3.9.9 on darwin)
+```
 
-* Launch [CXTA docker container](https://engci-maven.cisco.com/artifactory/list/cxta-docker/cxta/21.9/)
-* Copy **workflows** folder inside docker container
-* Run docker (ex : docker run -it dockerhub.cisco.com/cxta-docker/cxta:21.9 bash)
-* Inside Docker Container 
-  * Install softwares listed in Dependency section 
-  * update and source **env.sh**
-  * Run cisco sastre workflow 
-    * cd to **workflows** folder
-    * cxta sastre_workflows.robot  
-  * Check **report.html** for test report statistics
-  * Check **log.html** for test logs  
+## NOTES
 
-## Running the workflows in CXTM UI
-* Launch [CXTM](https://cxtm.cisco.com/)
-* create a Project
-  * Configure GIT 
-  * Configure VPN (if SDWAN dcloud instance is used)
-* At project level , configure following 4 variables in "Variables and Secrets" section
-  * VMANAGE_IP
-  * VMANAGE_PORT
-  * VMANAGE_USER
-  * VMANAGE_PASSWORD (select as secret)
-* ![Project level - Variables and Secrets](./project_level_variables.png)
-* Create a jbofile 
-  * Enter job file name
-  * Select jobfile type as "Script in GIT repo"
-  * Select Runtime Image Type as "cxta"
-  * Add this command in the "command" text box under Advanced Settings section
-    * . ./cisco/sastre/test/workflows/sastre_workflow.sh
-  * Enable all 4 above variables defined at project level under Advanced Settings section
-  * ![Enable all 4 above variables defined at project level](./jobfile_variables.png) 
-  * Click "Save and Run" to run the script
+Please ensure that "test-data" branch has correct data . This data folder will be used throughout the workflows.
 
-## Dependency
+## Running the workflows 
 
-* Install [Sastre-Pro](https://github.com/CiscoDevNet/sastre) using pip
-* Install [Sastre-Ansible](https://github.com/CiscoDevNet/sastre-ansible) refer [ReadMe](https://github.com/CiscoDevNet/sastre-ansible/blob/master/README.md) for build and installation
+* update and source **env.sh**
+```
+source env.sh
+```
+
+* Run sastre workflows
+    * sh sastre_workflows.robot  
+
+* Sample output
+```
+==============================================================================
+Sastre Workflows                                                              
+==============================================================================
+Workflow_01: Backup_Delete_Restore :: Executing list_config, show_... | PASS |
+------------------------------------------------------------------------------
+Workflow_02: Detach_Edge_Attach_Edge :: Executing show_template_va... | PASS |
+------------------------------------------------------------------------------
+Workflow_03: Detach_Vsmart_Attach_Vsmart :: Executing show_templat... | PASS |
+------------------------------------------------------------------------------
+Sastre Workflows                                                      | PASS |
+3 tests, 3 passed, 0 failed
+==============================================================================
+Output:  ${Sastre Ansible Home}/cisco/sastre/test/workflows/output.xml
+Log:     ${Sastre Ansible Home}/cisco/sastre/test/workflows/log.html
+Report:  ${Sastre Ansible Home}/cisco/sastre/test/workflows/report.html
+```
+* Check **report.html** for test report statistics
+* Check **log.html** for test logs
